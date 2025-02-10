@@ -15,7 +15,7 @@ const HeroSection = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: "felicisimojv@gmail.com", // Hardcoded email
-          message: "No!",
+          message: "You're my Valentine forever! ❤️",
         }),
       });
 
