@@ -1,0 +1,8 @@
+.textShadow {
+  transition: text-shadow 200ms ease-in-out;
+}
+
+.textShadow:hover {
+  cursor: pointer;
+  text-shadow: 1px 1px 10px rgba(205, 37, 211, 0.8);
+}
