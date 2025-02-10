@@ -21,7 +21,7 @@ const HeroSection = () => {
 
       const data = await response.json();
       if (data.success) {
-        alert("Your Valentine request has been sent! 💌");
+        alert("Your Answer has been sent! Pag ito no, awan ko nlng 😒 💌");
       } else {
         alert("Oops! Something went wrong.");
       }
