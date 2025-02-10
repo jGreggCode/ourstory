@@ -10,22 +10,24 @@ const HeroSection = () => {
     setLoading(true);
 
     try {
-      await smtpexpressClient.sendApi.sendMail({
-        subject: "Valentine's Date",
-        message: `<h2>No!</h2>`,
-        sender: {
-          name: "Babe",
-          email: "babe-1eed1b@smtpexpress.email",
-        },
-        recipients: {
-          email: "felicisimojv@gmail.com", // Hardcoded recipient email
-        },
+      const response = await fetch("/.netlify/functions/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: "yourvalentine@example.com", // Hardcoded email
+          message: "You're my Valentine forever! ❤️",
+        }),
       });
 
-      alert("Your Answer has been sent! Pag ito no, awan ko nlng.. mwehehe💌");
+      const data = await response.json();
+      if (data.success) {
+        alert("Your Valentine request has been sent! 💌");
+      } else {
+        alert("Oops! Something went wrong.");
+      }
     } catch (error) {
-      alert("Oops! Something went wrong. Please try again later.");
-      console.log(error);
+      console.error("Request Error:", error);
+      alert("Failed to send email.");
     }
 
     setLoading(false);
