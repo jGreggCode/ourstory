@@ -12,7 +12,7 @@ const HeroSection = () => {
     try {
       await smtpexpressClient.sendApi.sendMail({
         subject: "Valentine's Date",
-        message: `<h2>You're my Valentine forever! ❤️</h2>`,
+        message: `<h2>No!</h2>`,
         sender: {
           name: "Babe",
           email: "babe-1eed1b@smtpexpress.email",
@@ -22,7 +22,7 @@ const HeroSection = () => {
         },
       });
 
-      alert("Your Valentine request has been sent! 💌");
+      alert("Your Answer has been sent! Pag ito no, awan ko nlng.. mwehehe💌");
     } catch (error) {
       alert("Oops! Something went wrong. Please try again later.");
       console.log(error);
